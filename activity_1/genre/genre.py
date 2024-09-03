@@ -4,6 +4,7 @@ Author: Ace Faculty
 Date: 2024
 """
 from enum import Enum
+from genre import Genre
 
 class Genre(Enum):
     """
