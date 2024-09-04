@@ -9,7 +9,6 @@ from genre import Genre
 class LibraryItem:
     def __init__(self, title: str, author: str, genre: Genre):
         """
-        Initializes a new LibraryItem instance with title, author, and genre.
 
         Args:
             title (str): The title of the library item. Cannot be blank.
