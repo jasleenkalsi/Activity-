@@ -4,50 +4,56 @@ Author: Jasleen kalsi
 Date: 03 Sept 2024
 
 """
-from genre import Genre
+
+
+from genre.genre import Genre
 
 class LibraryItem:
-    def __init__(self, title: str, author: str, genre: Genre):
-        """
 
-        Args:
-            title (str): The title of the library item. Cannot be blank.
-            author (str): The author of the library item. Cannot be blank.
-            genre (Genre): The genre of the library item. Must be a valid Genre.
-
-        Raises:
-            ValueError: If the title is blank.
-            ValueError: If the author is blank.
-            ValueError: If the genre is not a valid Genre.
-        """
-        # Validate and set title
-        if not title():  
+    def __init__(self, item_id: int,title:str, author:str, genre:Genre,is_borrowed: bool):
+        # Validate title
+        if not title:
             raise ValueError("Title cannot be blank.")
-        self._title = title 
+        self._title = title
 
-        # Validate and set author
-        if not author():  
+        # Validate author
+        if not author:
             raise ValueError("Author cannot be blank.")
-        self._author = author  
+        self._author = author
 
+        # Validate genre
+        if genre not in Genre:
+            raise ValueError("Invalid Genre.")
+        self._genre = genre
+
+        if not isinstance(item_id, int):
+            raise ValueError("Item Id must be numeric.")
+        self._item_id = item_id
+
+        # Validate title
+        if not title:
+            raise ValueError("Title cannot be blank.")
+        self._title = title
+
+        # Validate author
+        if not author:
+            raise ValueError("Author cannot be blank.")
+        self._author = author
+
+        # Validate genre
         if not isinstance(genre, Genre):
             raise ValueError("Invalid Genre.")
         self._genre = genre
 
-    @property
-    def title (self):
-        return self._title
-        
+        # Validate is_borrowed
+        if not isinstance(is_borrowed, bool):
+            raise ValueError("Is Borrowed must be a boolean value.")
+        self._is_borrowed = is_borrowed
 
-    @property
-    def author(self):
-        """Returns the author of the library item."""
-        return self._author
+  
 
-    @property
-    def genre(self):
-        """Returns the genre of the library item."""
-        return self._genre
+   
+
 
 
 

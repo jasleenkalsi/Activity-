@@ -6,28 +6,30 @@ Edited by: {Student Name}
 Date: {Date}
 """
 
+# activity_01_main.py
 
+# Import necessary modules here
+from genre.genre import Genre
+from library_item.library_item import LibraryItem
 
 def main():
-    """Test the functionality of the methods encapsulated 
-    in this project.
-    """ 
-    # In the statements coded below, ensure that any statement that could result 
-    # in an exception is handled.  When exceptions are 'caught', display the exception 
-    # message to the console.
+    try:
+        item = LibraryItem(1, "Harry Potter", "John", Genre.FICTION, False)
+        print(f"Created LibraryItem: ID={item.item_id}, Title='{item.title}', Author='{item.author}', Genre='{item.genre}', Is Borrowed={item.is_borrowed}")
+    except ValueError as e:
+        print(f"Error creating LibraryItem: {e}")
 
-    # 1. Code a statement which creates an instance of the LibraryItem class with valid inputs.
-    # Use your own unique valid values for the inputs to the class.
+    try:
+        item = LibraryItem("one", "Harry Potter", "John", Genre.FICTION, False)
+    except ValueError as e:
+        print(f"Error creating LibraryItem with invalid item_id: {e}")
 
-
-    # 2. Using the instance defined above, and the class Accessors, print 
-    # each of the attributes of the LibraryItem instance.
-
-    
-
-    # 3. Code a statement which creates an instance of the LibraryItem class with one or more invalid inputs.
-    # Use your own unique valid values for the inputs to the class.
-
+    try:
+        item = LibraryItem(1, "Harry Potter", "John", Genre.FICTION, "Yes")
+    except ValueError as e:
+        print(f"Error creating LibraryItem with invalid is_borrowed: {e}")
 
 if __name__ == "__main__":
     main()
+
+

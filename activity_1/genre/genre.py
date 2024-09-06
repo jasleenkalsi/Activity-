@@ -3,16 +3,16 @@ Description: An enumeration containing valid Genres.
 Author: Ace Faculty
 Date: 2024
 """
+
+
 from enum import Enum
-from genre import Genre
 
 class Genre(Enum):
-    """
-    An enumeration listing each of the available genres.
-    To use:  Genre.GENRE_NAME.  
-    Example: Genre.NON_FICTION
-    """
-    FICTION = 0
-    NON_FICTION = 1
-    FANTASY = 2
-    TRUE_CRIME = 3
+    FICTION = 1
+    NONFICTION = 2
+    SCIFI = 3
+    FANTASY = 4
+    MYSTERY = 5
+    TRUE_CRIME = 6
+
+
