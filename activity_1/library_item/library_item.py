@@ -50,7 +50,30 @@ class LibraryItem:
             raise ValueError("Is Borrowed must be a boolean value.")
         self._is_borrowed = is_borrowed
 
-  
+    # Accessor for item_id
+    @property
+    def item_id(self):
+        return self._item_id
+
+    # Accessor for title
+    @property
+    def title(self):
+        return self._title
+
+    # Accessor for author
+    @property
+    def author(self):
+        return self._author
+
+    # Accessor for genre
+    @property
+    def genre(self):
+        return self._genre
+
+    # Accessor for is_borrowed
+    @property
+    def is_borrowed(self):
+        return self._is_borrowed
 
    
 
