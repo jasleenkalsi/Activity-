@@ -1,12 +1,12 @@
 """"
 Description: A class to manage User objects.
 Author: Jasleen kalsi
-Date: 
+Date:  03 sept 2024
 """
-# library_user.py
 
 
 from borrower_status.borrower_status import BorrowerStatus
+
 class LibraryUser:
     def __init__(self, user_id: int, name: str, email: str, borrower_status: BorrowerStatus):
         """
